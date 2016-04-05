@@ -1,6 +1,7 @@
 angular.module('app');
 
 angular.module('app').controller('FriendController', function($scope) {
+
   $scope.checkSort = function() {
     if($scope.sortDirection === "+") {
       return true;
@@ -8,6 +9,29 @@ angular.module('app').controller('FriendController', function($scope) {
       return false;
     }
   }
+  $scope.sortOptions = [
+    {
+      name: 'Name',
+      value: 'name'
+    },
+    {
+      name: '#Friends',
+      value: 'friend_count'
+    },
+    {
+      name: 'City',
+      value: 'current_location.city'
+    },
+    {
+      name: 'State',
+      value: 'current_location.state'
+    },
+    {
+      name: 'Country',
+      value: 'current_location.country'
+    }
+  ];
+
   $scope.friends = [
     {
       "name": "Preston McNeil",
